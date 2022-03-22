@@ -15,22 +15,22 @@
 </head>
 <body>
 <h2>Update Employee</h2>
-<%
+<%--<%
     Employee e = (Employee) request.getAttribute("employee");
-%>
-<form action="/updateEmployee?id=<%=e.getId()%>" method="post">
+%>--%>
+<form action="/employees/update>" method="post">
 
     <label for="email">email</label><br>
-    <input type="text" id="email" name="email" value="<%=e.getEmail() %>"/><br>
+    <input type="text" id="email" name="email" /><br>
 
     <label for="firstName">firstName</label><br>
-    <input type="text" id="firstName" name="firstName" value="<%=e.getFirstName() %>" ><br>
+    <input type="text" id="firstName" name="firstName" /> <br>
 
     <label for="lastName">lastName</label><br>
-    <input type="text" id="lastName" name="lastName" value="<%=e.getLastName()%>"><br>
+    <input type="text" id="lastName" name="lastName" ><br>
 
     <label for="password">Password</label><br>
-    <input type="password" id="password" name="password" value="<%=e.getPassword()%>"><br>
+    <input type="password" id="password" name="password" ><br>
 
 
     <input type="submit" value="Submit" />

@@ -11,7 +11,7 @@
     <title>Add</title>
 </head>
 <body>
-<form action="/addEmployee" method="post">
+<form action="${pageContext.request.contextPath}/employees/store" method="post">
 
     <label for="email">email</label><br>
     <input type="text" id="email" name="email"><br>

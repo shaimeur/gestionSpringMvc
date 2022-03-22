@@ -11,7 +11,7 @@
         <properties>
             <property name="packagesToScan" value="com.shaimeur.model"/>
             <!--            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://remotemysql.com:3306/Bl5yh9ktIe?user=Bl5yh9ktIe&amp;password=bz5Pv4aRxp"/>-->
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3305/GESTION-JAVA?user=root&amp;password=root"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3308/GESTION-SPRING?user=root&amp;password=root"/>
 
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakatra.persistence.jdbc.user" value="root"/>
@@ -21,7 +21,7 @@
             <property name="hibernate.id.new_generator_mappings" value="false"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="false"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
         </properties>
     </persistence-unit>
 </persistence>

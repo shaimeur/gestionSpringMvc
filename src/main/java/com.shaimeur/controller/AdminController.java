@@ -1,5 +1,6 @@
 package com.shaimeur.controller;
 
+import com.shaimeur.dao.AdminDaoImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -11,5 +12,11 @@ public class AdminController {
         return "login" ;
     }
 
-    public String 
+    @GetMapping("/")
+    public String getAll(){
+        AdminDaoImpl adminDao = new AdminDaoImpl();
+        adminDao.getAll();
+        return "welcome";
+    }
+
 }

@@ -22,7 +22,7 @@
 <body>
 
 <h2>All Employee
-    <a href="/addEmployee">Add new Employee </a>
+    <a href="/employees/add">Add new Employee </a>
 </h2>
 <table>
     <thead>
@@ -36,23 +36,25 @@
     </tr>
     </thead>
     <tbody>
-    <%
+   <%-- <%
         List<Employee> employees = (List<Employee>) request.getAttribute("employees");
         for(int i = 0 ;i < employees.size() ; i++ ) {
-    %>
+    %>--%>
+   <c:forEch  items="${listEmplyees}" var="employee">
     <tr>
-        <td><%=employees.get(i).getId() %></td>
-        <td><%=employees.get(i).getEmail()%></td>
-        <td><%=employees.get(i).getFirstName()%></td>
-        <td><%=employees.get(i).getLastName()%></td>
+       <td>${employees.id}</td>
+       <td>${employees.email}</td>
+       <td>${employees.firstName}</td>
+       <td>${empoyees.lastName}</td>
         <td>
-            <a href="${pageContext.servletContext.contextPath}/updateEmployee?id=<%=employees.get(i).getId()%>">Update</a>
-            <a href="${pageContext.servletContext.contextPath}/deleteEmployee?id=<%=employees.get(i).getId()%>">Delete</a>
+            <a href="${pageContext.servletContext.contextPath}/employees/edit?id=${employees.id}>Update</a>
+
+            <a href="${pageContext.servletContext.contextPath}/employees/delete?id=${employees.id}>Delete</a>
         </td>
 
 
     </tr>
-    <%}%>
+
     </tbody>
 
 

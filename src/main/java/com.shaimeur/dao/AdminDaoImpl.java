@@ -6,9 +6,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 
 public class AdminDaoImpl implements AdminDao {
-    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("hibernate");
+    static EntityManagerFactory emf ;
 
-
+    public AdminDaoImpl() {
+        this.emf = Persistence.createEntityManagerFactory("hibernate");
+    }
 
     @Override
     public Admin add(Admin admin) {

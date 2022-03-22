@@ -8,8 +8,11 @@ import javax.persistence.Persistence;
 import java.util.ArrayList;
 
 public class EmployeeDaoIpml implements EmployeeDao{
-    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("hibernate");
+    private EntityManagerFactory emf;
 
+    public EmployeeDaoIpml() {
+        this.emf = Persistence.createEntityManagerFactory("hibernate");
+    }
 
     @Override
     public Employee add(Employee employee) {
@@ -42,7 +45,7 @@ public class EmployeeDaoIpml implements EmployeeDao{
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
 
-        ArrayList<Employee> employees =  new ArrayList<Employee>(em.createQuery("from  Employee ").getResultList()) ;
+        ArrayList<Employee> employees = (ArrayList<Employee>) em.createQuery("from  Employee ",Employee.class).getResultList();
 
         em.getTransaction().commit();
         em.close();
